@@ -18,11 +18,17 @@ module-type: wikirule
     this.matchRegExp = /\[[xX_ ]\]/mg;
   };
 
+  /*onchange=toggleCheckbox(this)
+  exports.toggle = function toggleCheckbox(element)
+  {
+    element.check = !element.checked;
+  }*/
+
   exports.parse = function() {
     // Move past the match
     this.parser.pos = this.matchRegExp.lastIndex;
     return [{type: "raw", 
-      html: "<input type=\"checkbox\" name=\"option1\" value=\"Milk\"> Milk"
+      html: "<label for=\"check1\"><input type=\"checkbox\" name=\"option1\" id=\"check1\" value=\"Some Milk Please\"> Milk<\/label>"
     }];
   };
 })();
